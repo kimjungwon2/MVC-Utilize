@@ -9,7 +9,8 @@ import javax.annotation.PostConstruct;
 
 @Component
 @RequiredArgsConstructor
-public class TestDataInit {
+public class
+TestDataInit {
 
     private final ItemRepository itemRepository;
 
