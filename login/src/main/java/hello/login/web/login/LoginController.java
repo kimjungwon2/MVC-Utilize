@@ -90,7 +90,7 @@ public class LoginController {
         //로그인 성공 처리 TODO
         //세션이 있으면 세션 반환, 없으면 신규 세션을 생성
         HttpSession session = request.getSession();
-        session.setAttribute(SessionConst.Login_MEMBER, loginMember);
+        session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
 
         return "redirect:/";
     }
