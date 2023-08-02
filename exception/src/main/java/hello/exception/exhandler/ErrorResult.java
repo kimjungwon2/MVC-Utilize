@@ -9,4 +9,6 @@ public class ErrorResult {
 
     private String code;
     private String message;
+
+
 }
