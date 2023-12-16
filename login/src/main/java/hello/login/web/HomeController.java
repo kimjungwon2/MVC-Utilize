@@ -2,7 +2,6 @@ package hello.login.web;
 
 import hello.login.domain.member.Member;
 import hello.login.domain.member.MemberRepository;
-import hello.login.web.session.SessionConst;
 import hello.login.web.session.SessionManager;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -47,7 +46,7 @@ public class HomeController {
         return "loginHome";
     }
 
-    @PostMapping("/logout")
+//    @PostMapping("/logout")
     public String logout(HttpServletResponse response){
         expireCookie(response, "memberId");
 
@@ -95,6 +94,7 @@ public class HomeController {
         return "loginHome";
     }
 
+    @GetMapping("/")
     public String homeLoginV3Spring(
             @SessionAttribute(name = SessionConst.LOGIN_MEMBER, required= false) Member loginMember
             , Model model

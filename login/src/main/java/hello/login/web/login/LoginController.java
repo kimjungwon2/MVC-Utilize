@@ -2,7 +2,7 @@ package hello.login.web.login;
 
 import hello.login.domain.login.LoginService;
 import hello.login.domain.member.Member;
-import hello.login.web.session.SessionConst;
+import hello.login.web.SessionConst;
 import hello.login.web.session.SessionManager;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -103,7 +103,7 @@ public class LoginController {
 
         //로그인 성공 TODO
         //세션이 있으면 있는 세션 반환, 없으면 신규 세션을 생성.
-        HttpSession session = request.getSession(false);
+        HttpSession session = request.getSession();
 
         //세션에 로그인 회원 정보 보관
         session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
@@ -111,6 +111,8 @@ public class LoginController {
 
         return "redirect:/";
     }
+
+
 
 //    @PostMapping("/logout")
     public String logout(HttpServletRequest request){
